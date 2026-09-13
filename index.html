@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Web kalkulator</title>
+        <!-- <script></script> element sadrži JavaScript kod. -->
+        <script>
+            function izracunaj()
+            {
+                const operand1 = parseFloat(document.getElementById("operand1").value);
+                const operand2 = parseFloat(document.getElementById("operand2").value);
+                const operacija = document.getElementById("operator").value;
+                let operator, rezultat;
+                switch (operacija)
+                {
+                    case "plus": operator = " + "; rezultat = operand1 + operand2; break;
+                    case "minus": operator = " – "; rezultat = operand1 - operand2; break;
+                    case "puta": operator = " × "; rezultat = operand1 * operand2; break;
+                    case "kroz": operator = " / "; rezultat = operand1 / operand2; break;
+                }
+                alert(operand1 + operator + operand2 + " = " + rezultat);
+            }
+        </script>
+    </head>
+    <body bgcolor="Maroon" text="Cyan"><center>
+        <h1>Web kalkulator</h1>
+		<img src="https://lh3.googleusercontent.com/d/1afNw8RsrbDBV-xOj-3nCqetL-MWd3yNi" height="150" />
+        <br /><br /><hr /><br />
+        <input type="text" size="9" placeholder="Prvi operand" id="operand1" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="operator">
+            <option value="plus">&nbsp;+&nbsp;</option>
+            <option value="minus">&nbsp;–&nbsp;</option>
+            <option value="puta">&nbsp;×&nbsp;</option>
+            <option value="kroz">&nbsp;÷&nbsp;</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" size="9" placeholder="Drugi operand" id="operand2" />
+        <br /><br /><hr /><br />
+        <button onclick="izracunaj();">Rezultat</button>
+        <script>document.body.style.zoom = "200%"; /* Ovo ne radi u Firefox-u */</script>
+    </center></body>
+</html>
